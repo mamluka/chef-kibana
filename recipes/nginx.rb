@@ -34,7 +34,7 @@ template "/etc/nginx/sites-available/kibana" do
     :kibana_dir       => node['kibana']['web_dir'],
     :listen_address   => node['kibana']['webserver_listen'],
     :listen_port      => node['kibana']['webserver_port'],
-    :es_scheme        => node['kibana']['es_scheme']
+    :es_scheme        => node['kibana']['es_scheme'],
     :location         => node['kibana']['location']
   )
 end
