@@ -1,7 +1,7 @@
 server {
-  listen                <%= @listen_address %>:<%= @listen_port %>;
+  listen                <%= @listen_port %>;
 
-  server_name           <%= @server_name %> <%= @server_aliases.join(" ") %>;
+  server_name           <%= @server_name %>;
   access_log            <%= node['nginx']['log_dir'] %>/<%= @server_name %>.access.log;
 
   location <%= @location %> {
