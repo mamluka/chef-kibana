@@ -20,6 +20,7 @@ default['kibana']['webserver_aliases'] = [node.ipaddress]
 default['kibana']['webserver_listen'] = node.ipaddress
 default['kibana']['webserver_port'] = 80
 default['kibana']['webserver_scheme'] = "http://"
+default['kibana']['location'] = "/"
 default['kibana']['config']['kibana_index']  = "kibana-int"
 default['kibana']['config']['panel_names']   =  [ 
   'histogram', 'map', 'pie', 'table', 'filtering', 'timepicker', 'text', 'fields',
