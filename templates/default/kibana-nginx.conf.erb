@@ -4,8 +4,8 @@ server {
   server_name           <%= @server_name %>;
   access_log            <%= node['nginx']['log_dir'] %>/<%= @server_name %>.access.log;
 
-  location <%= @location %> {
-    alias  <%= @kibana_dir %>;
+  location / {
+    root  <%= @kibana_dir %>;
   }
 
 location ~ ^/_aliases$ {
