@@ -8,27 +8,27 @@ server {
     root  <%= @kibana_dir %>;
   }
 
-location ~ ^/_aliases$ {
+location ~ ^/_aliases.*$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  location ~ ^/.*/_aliases$ {
+  location ~ ^/.*/_aliases.*$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  location ~ ^/_nodes$ {
+  location ~ ^/_nodes.*$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  location ~ ^/.*/_search$ {
+  location ~ ^/.*/_search.*$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  location ~ ^/.*/_mapping$ {
+  location ~ ^/.*/_mapping.*$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  location ~ ^/_cluster/health$ {
+  location ~ ^/_cluster/health.*$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
